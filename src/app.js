@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
@@ -46,7 +48,7 @@ app.get("/weather", (req, res) => {
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    name: "Xavier",
+    name: "Sarthak",
   });
 });
 
@@ -55,14 +57,14 @@ app.set("views", viewsPath);
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "About this site",
-    name: "Xavier",
+    name: "Sarthak",
   });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
-    name: "Xavier",
+    name: "Sarthak",
   });
 });
 
@@ -70,7 +72,7 @@ app.get("/help/*", (req, res) => {
   res.render("404page", {
     title: "Error 404",
     errorMessage: "Article not Found",
-    name: "Xavier",
+    name: "Sarthak",
   });
 });
 
@@ -87,10 +89,10 @@ app.get("*", (req, res) => {
   res.render("404page", {
     title: "Error 404",
     errorMessage: "Page not Found",
-    name: "Xavier",
+    name: "Sarthak",
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(port, () => {
+  console.log("Server is up on port" + port + ". ");
 });
