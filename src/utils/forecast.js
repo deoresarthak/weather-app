@@ -22,7 +22,7 @@ const forecast = (latitude, longitude, callback) => {
           " degress outside. There is a " +
           response.body.current.precip * 100 +
           "% chance of rain. " +
-          "UV Index = " +
+          "UV Index: " +
           response.body.current.uv_index
       );
     }
