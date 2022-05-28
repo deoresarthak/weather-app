@@ -21,7 +21,9 @@ const forecast = (latitude, longitude, callback) => {
           response.body.current.temperature +
           " degress outside. There is a " +
           response.body.current.precip * 100 +
-          "% chance of rain."
+          "% chance of rain. " +
+          "UV Index = " +
+          response.body.current.uv_index
       );
     }
   });
